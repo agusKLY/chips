@@ -7,13 +7,27 @@ function generateCookie() {
         return result;
     }
 
-    // Generate a random cookie value
-    var cookieValue = randomString(12);
-    console.log(cookieValue);
+    var cookieName = "__Host-githubchips";
+    var cookieValue = "";
+    var cookies = document.cookie.split(';');
 
-    // Create a cookie with the generated value (set path to ensure accessibility from domainB.com)
-    //document.cookie = "myCookie=" + cookieValue + "; path=/";
-    document.cookie = "__Host-githubchips=" + cookieValue + "; Secure; Path=/; SameSite=None; Partitioned;"
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.indexOf(cookieName + '=') === 0) {
+            cookieValue = cookie.substring(cookieName.length + 1);
+            break;
+        }
+    }
+
+    // Check if cookie already exists
+    if (!cookieValue) {
+        // Generate a new cookie value if it doesn't exist
+        cookieValue = randomString(12);
+    }
+
+    // Create a cookie with the generated or existing value (set path to ensure accessibility from domainB.com)
+    document.cookie = cookieName + "=" + cookieValue + "; Secure; Path=/; SameSite=None; Partitioned;"
+
     console.log("Cookies created using code on github domain")
 }
 
