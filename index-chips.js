@@ -1,4 +1,4 @@
-function generateCookie() {
+.function generateCookie() {
     // Function to generate a random alphanumeric string as UUID
     function generateUUID(){
         var d = (new Date).getTime();
@@ -29,7 +29,7 @@ function generateCookie() {
         cookieValue = generateUUID();
     }
 
-    // Create a cookie with the generated or existing value (set path to ensure accessibility from domainB.com)
+    // Create a cookie with the generated or existing value (set path to ensure accessibility from parent domain)
     document.cookie = cookieName + "=" + cookieValue + "; Secure; Path=/; SameSite=None; Partitioned;"
 
     console.log("Cookies created using code on github domain")
