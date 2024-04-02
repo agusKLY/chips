@@ -30,7 +30,7 @@ function generateCookie() {
 
     // Create a cookie with the generated or existing value (set path to ensure accessibility from parent domain)
     var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    d.setTime(d.getTime() + (90 * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
     document.cookie = cookieName + "=" + cookieValue + "; Secure;" + expires + "; Path=/; SameSite=None; Partitioned;"
 
