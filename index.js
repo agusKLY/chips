@@ -1,11 +1,5 @@
 function generateCookie() {
-    // Function to generate a random 12-digit alphanumeric string
-    function randomString(length) {
-        var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var result = "";
-        for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];
-        return result;
-    }
+    // Function to generate a random alphanumeric string as UUID
     function generateUUID(){
         var d = (new Date).getTime();
         var uuid = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
