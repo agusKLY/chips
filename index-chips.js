@@ -38,7 +38,8 @@ function generateCookie() {
     // This var will be used on another code as checker to avoid race time condition
     window.kly.UUIDexist = true;
 
-    console.log("Cookies created using code on github domain")
+    console.log("Cookies created using code on github domain");
+    console.log("Cookies pair : "+cookieName+"="+cookieValue);
 }
 
 generateCookie();
